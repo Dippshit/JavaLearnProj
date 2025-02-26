@@ -59,7 +59,7 @@ public class KonohaMissionRegistration {
 
 
             default:
-                System.out.println("Tente novamente");;
+                System.out.println("Tente novamente");
 
 
                 }
