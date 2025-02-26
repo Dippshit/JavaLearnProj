@@ -3,21 +3,78 @@ import java.util.Scanner;
 public class KonohaMissionRegistration {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        String[] ninjasName = new String[1];
+       while (true){
+            System.out.println("-----------------------------------------------");
+            System.out.println("Sistema de Cadastro De Ninjas da Vila da Folha");
+            System.out.println("Escolha uma opção:");
+            System.out.println("1-Cadastro de Ninjas\n" + "2-Consulta de Ninjas Cadastrados\n" +
+                "3-Remoção de Ninjas do Sistema\n" + "0-Encerrar o Sistema\n");
+        int choice = scan.nextInt();
+        scan.nextLine();
 
-        String[] ninjasName = new String[3];
 
-        int[] ninjasAge = new int[3];
+        switch(choice) {
+
+            case 1:
+                System.out.println("Digite S caso queira sair\n" + "Digite quantos Ninjas quer cadastrar:");
+                String input = scan.nextLine();
+                if(input.equalsIgnoreCase("S")){break;}
+                while (input.matches(".*[a-zA-Z].*")){
+                System.out.println("Tente novamente, Digite quantos Ninjas quer cadastrar:");
+                 input = scan.nextLine();}
+            int numNinja = Integer.parseInt(input);
+                 ninjasName = new String[numNinja];
+                for (int i=0;i<ninjasName.length;i++) {
+                    System.out.printf("Registre o %d° Ninja da Vila da folha\n", i + 1);
+                    System.out.print("Digite o nome: ");
+                    ninjasName[i] = scan.nextLine();
+                }
+                break;
+
+
+                case 2:
+                    System.out.println("Ninjas Cadastrados:");
+                    for (int i = 0; i < ninjasName.length; i++) {
+                        System.out.println(i+1+"° "+ninjasName[i]);
+                    }
+                    System.out.println();
+                    break;
+
+
+                case 0:
+                        scan.close();
+                        System.exit(0);
+
+
+                case 3:
+                    System.out.println("Qual Ninja deseja retirar?:");
+                    for (int i = 0; i < ninjasName.length; i++) {
+                        System.out.println(i+1+"- "+ninjasName[i]);}
+                    int remove = scan.nextInt();
+                    while (remove>ninjasName.length){
+                        System.out.println("Tente Novamente");
+                        remove = scan.nextInt();}
+                    ninjasName[remove-1]=null;
+
+
+            default:
+                System.out.println("Tente novamente");;
+
+
+                }
+        }
+
+
+       /* int[] ninjasAge = new int[3];
 
         String[] MissionName = new String[3];
 
         char[] MissionDifficulty = new char[3];
 
-        int NumNinja= 0; //index of the registered ninja
+         //index of the registered ninja
 
-        for (;NumNinja<3;NumNinja++){
-            System.out.printf("Registre o %d° Ninja da Vila da folha\n",NumNinja+1);
-                 System.out.print("Digite o nome: ");
-                     ninjasName[NumNinja] = scan.nextLine();
+
 
             System.out.print("Digite a Idade: ");
                     ninjasAge[NumNinja] = scan.nextInt();
@@ -33,6 +90,12 @@ public class KonohaMissionRegistration {
 
 
         }
+
+
+
+
+
+
 for(int i=0;i<3;i++){
     System.out.printf("Registro do Ninja N°%d\n",i+1);
     System.out.println("Nome: " + ninjasName[i]);
@@ -46,7 +109,7 @@ for(int i=0;i<3;i++){
    }else {
        System.out.println("Status da Missão: Impossivel de Concluir, idade insuficiente");
    }
-}
+}*/
 
 
     }
