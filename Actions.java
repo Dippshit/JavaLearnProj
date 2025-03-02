@@ -80,7 +80,7 @@ public class Actions {
 
                 case "B":
                     System.out.println("Você escolheu Ninja Básico!");
-                     newninja = new Ninjabasico(name, age, assignedMission, difficulty, skill);
+                     newninja = new NinjaBasico(name, age, assignedMission, difficulty, skill);
                     ninjasData.add(newninja);
                     System.out.println("Ninja Básico Registrado!");
                     break;
@@ -109,7 +109,7 @@ public class Actions {
                      System.out.println(("Tipo de Habilidade do Ninja:" +infoNinja.skill));
                  }
             else{
-              if(showNinja instanceof Ninjabasico infoNinja) {
+              if(showNinja instanceof NinjaBasico infoNinja) {
                   System.out.println((i + 1) + "° Ninja: " +infoNinja.name );
                   System.out.println("Idade: " + infoNinja.age);
                   System.out.println("Missão Atribuida: " + infoNinja.assignedMission);
