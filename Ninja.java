@@ -1,10 +1,11 @@
 package Dados;
 
- class Ninja {
-    String name;
+ abstract class Ninja {
+     String name;
     int age;
     String assignedMission;
     char difficulty;
+
 
 
 
@@ -15,4 +16,6 @@ package Dados;
      this.assignedMission = assignedMission;
      this.difficulty = difficulty;
  }
-}
+
+ }
+

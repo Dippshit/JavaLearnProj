@@ -36,7 +36,7 @@ public class Main {
                         input = scan.nextLine();
                     }
 
-                    Actions.NinjaRegistration(input);
+                    Actions.RegisterNinja(input);
 
                     try {
                         System.out.println("retornando ao Menu inicial...");
