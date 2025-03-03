@@ -31,12 +31,12 @@ public class Main {
                     }//Retorna para o Menu Principal
 
 
-                    while (input.matches(".*[a-zA-Z].*"))/*Impede o erro de input de letras */ {
+                    while (input.matches(".*[a-zA-Z]. *"))/*Impede o erro de input de letras */ {
                         System.out.println("Tente novamente, Digite quantos Ninjas quer cadastrar:");
                         input = scan.nextLine();
                     }
 
-                    Actions.RegisterNinja(input);
+                    Actions.RegisterNinja(input, scan);
 
                     try {
                         System.out.println("retornando ao Menu inicial...");
@@ -107,7 +107,8 @@ public class Main {
                     System.out.println("retornando ao Menu inicial...");
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
-                    System.out.println("erro");
+                    System.out.println("Pressione Enter para continuar");
+                    scan.nextLine();
                 }
                 break;
 

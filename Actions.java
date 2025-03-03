@@ -2,13 +2,12 @@ package Dados;
 
 
 import java.util.Scanner;
-
 import static Dados.Main.ninjasData;
 
 public class Actions {
 
-    public static void  RegisterNinja(String input) {
-        Scanner scan = new Scanner(System.in);
+    public static void  RegisterNinja(String input, Scanner scan) {
+       // Scanner scan = new Scanner(System.in);
         habilidades skill = habilidades.BASICA;
         Ninja newninja;
         int numNinja = Integer.parseInt(input);
