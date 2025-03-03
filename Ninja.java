@@ -16,6 +16,9 @@ package Dados;
      this.assignedMission = assignedMission;
      this.difficulty = difficulty;
  }
+Ninja (){
 
+}
+ public abstract void Apresentacao();
  }
 

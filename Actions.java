@@ -2,13 +2,12 @@ package Dados;
 
 
 import java.util.Scanner;
-
 import static Dados.Main.ninjasData;
 
 public class Actions {
 
-    public static void  RegisterNinja(String input) {
-        Scanner scan = new Scanner(System.in);
+    public static void  RegisterNinja(String input, Scanner scan) {
+       // Scanner scan = new Scanner(System.in);
         habilidades skill = habilidades.BASICA;
         Ninja newninja;
         int numNinja = Integer.parseInt(input);
@@ -80,7 +79,7 @@ public class Actions {
 
                 case "B":
                     System.out.println("Você escolheu Ninja Básico!");
-                     newninja = new Ninjabasico(name, age, assignedMission, difficulty, skill);
+                     newninja = new NinjaBasico(name, age, assignedMission, difficulty, skill);
                     ninjasData.add(newninja);
                     System.out.println("Ninja Básico Registrado!");
                     break;
@@ -107,14 +106,17 @@ public class Actions {
                      System.out.println("Missão Atribuida: " + infoNinja.assignedMission);
                      System.out.println("Dificuldade da Missão: " + String.valueOf(infoNinja.difficulty).toUpperCase());
                      System.out.println(("Tipo de Habilidade do Ninja:" +infoNinja.skill));
+                     infoNinja.Apresentacao();
                  }
             else{
-              if(showNinja instanceof Ninjabasico infoNinja) {
+              if(showNinja instanceof NinjaBasico infoNinja) {
                   System.out.println((i + 1) + "° Ninja: " +infoNinja.name );
                   System.out.println("Idade: " + infoNinja.age);
                   System.out.println("Missão Atribuida: " + infoNinja.assignedMission);
                   System.out.println("Dificuldade da Missão: " + String.valueOf(infoNinja.difficulty).toUpperCase());
-                  System.out.println(("Tipo de Habilidade do Ninja:" +infoNinja.skill));}
+                  System.out.println(("Tipo de Habilidade do Ninja:" +infoNinja.skill));
+                  infoNinja.Apresentacao();}
+
               }}
 
 
