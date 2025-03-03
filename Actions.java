@@ -107,6 +107,7 @@ public class Actions {
                      System.out.println("Missão Atribuida: " + infoNinja.assignedMission);
                      System.out.println("Dificuldade da Missão: " + String.valueOf(infoNinja.difficulty).toUpperCase());
                      System.out.println(("Tipo de Habilidade do Ninja:" +infoNinja.skill));
+                     infoNinja.Apresentacao();
                  }
             else{
               if(showNinja instanceof NinjaBasico infoNinja) {
@@ -114,7 +115,9 @@ public class Actions {
                   System.out.println("Idade: " + infoNinja.age);
                   System.out.println("Missão Atribuida: " + infoNinja.assignedMission);
                   System.out.println("Dificuldade da Missão: " + String.valueOf(infoNinja.difficulty).toUpperCase());
-                  System.out.println(("Tipo de Habilidade do Ninja:" +infoNinja.skill));}
+                  System.out.println(("Tipo de Habilidade do Ninja:" +infoNinja.skill));
+                  infoNinja.Apresentacao();}
+
               }}
 
 

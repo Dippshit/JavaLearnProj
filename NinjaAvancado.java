@@ -10,6 +10,8 @@ public habilidades skill;
          this.skill = skill;
     }
 
-
+    public void Apresentacao(){
+        System.out.println("Meu nome é "+name+" Minha habilidade é " + skill+ " e um dia serei um Grande Ninja" );
+    }
 
 }

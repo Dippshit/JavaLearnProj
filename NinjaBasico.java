@@ -8,4 +8,13 @@ public class NinjaBasico extends Ninja{
         super(name, age, assignedMission, difficulty);
        this.skill = skill;
 
-}}
+
+}
+
+    NinjaBasico(){
+
+    }
+
+    public void Apresentacao(){
+        System.out.println("Meu nome é "+name+" Minha habilidade é " + skill+ " mas um dia serei um Grande Ninja" );
+    }}
