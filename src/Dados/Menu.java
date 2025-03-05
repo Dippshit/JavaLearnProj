@@ -9,6 +9,7 @@ public class Menu {
                     1-Cadastro de Ninjas
                     2-Consulta de Ninjas Cadastrados
                     3-Remoção de Ninjas do Sistema
+                    4-Simular Batalha
                     0-Encerrar o Sistema
                     """);
     }

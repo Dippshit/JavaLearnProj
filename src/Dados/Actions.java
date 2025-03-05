@@ -8,7 +8,7 @@ public class Actions {
 
     public static void  RegisterNinja(String input, Scanner scan) {
        // Scanner scan = new Scanner(System.in);
-        habilidades skill = habilidades.BASICA;
+        abilities skill = abilities.BASICA;
         Ninja newninja;
         int numNinja = Integer.parseInt(input);
         for (int i = 0; i < numNinja; i++) {
@@ -43,31 +43,31 @@ public class Actions {
 
                     switch (skillChoice){
                         case 1:
-                             skill = habilidades.TAIJUTSU;
+                             skill = abilities.TAIJUTSU;
                              newninja= new NinjaAvancado(name, age, assignedMission, difficulty, skill);
                             ninjasData.add(newninja);
                             break;
 
                         case 2:
-                             skill = habilidades.NINJUTSU;
+                             skill = abilities.NINJUTSU;
                             newninja = new NinjaAvancado(name, age, assignedMission, difficulty, skill);
                             ninjasData.add(newninja);
                             break;
 
                         case 3:
-                            skill = habilidades.GENJUTSU;
+                            skill = abilities.GENJUTSU;
                             newninja = new NinjaAvancado(name, age, assignedMission, difficulty, skill);
                             ninjasData.add(newninja);
                             break;
 
                         case 4:
-                            skill = habilidades.KATON;
+                            skill = abilities.KATON;
                             newninja = new NinjaAvancado(name, age, assignedMission, difficulty, skill);
                             ninjasData.add(newninja);
                             break;
 
                         case 5:
-                            skill = habilidades.RINNENGAN;
+                            skill = abilities.RINNENGAN;
                             newninja = new NinjaAvancado(name, age, assignedMission, difficulty, skill);
                             ninjasData.add(newninja);
                             break;
@@ -86,12 +86,11 @@ public class Actions {
 
             }
 
-            //Ninja newninja = new Ninja(name, age, assignedMission, difficulty);
 
         }
     }
 
-        public void ShowRegistered() {
+        public static void ShowRegistered() {
             System.out.println("Ninjas cadastrados:");
 
             Ninja showNinja;
@@ -106,7 +105,7 @@ public class Actions {
                      System.out.println("Missão Atribuida: " + infoNinja.assignedMission);
                      System.out.println("Dificuldade da Missão: " + String.valueOf(infoNinja.difficulty).toUpperCase());
                      System.out.println(("Tipo de Habilidade do Ninja:" +infoNinja.skill));
-                     infoNinja.Apresentacao();
+                     infoNinja.Presentation();
                  }
             else{
               if(showNinja instanceof NinjaBasico infoNinja) {
@@ -115,7 +114,7 @@ public class Actions {
                   System.out.println("Missão Atribuida: " + infoNinja.assignedMission);
                   System.out.println("Dificuldade da Missão: " + String.valueOf(infoNinja.difficulty).toUpperCase());
                   System.out.println(("Tipo de Habilidade do Ninja:" +infoNinja.skill));
-                  infoNinja.Apresentacao();}
+                  infoNinja.Presentation();}
 
               }}
 
