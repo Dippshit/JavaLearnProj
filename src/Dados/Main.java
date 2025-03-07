@@ -8,15 +8,15 @@ public class Main {
         Scanner scan = new Scanner(System.in);
 
 
-        Actions make = new Actions();
-
-
         int choice = -1;
 
 
-        while (choice != 0) {//Menu Recorrente
+        while (choice!=0) {//Menu Recorrente
+
             Menu.PrintMenu();
+
             choice = scan.nextInt();
+
             scan.nextLine();//Para Limpar o \n do buffer
 
             switch (choice) {
@@ -26,6 +26,8 @@ public class Main {
                 case 1:
                     System.out.println("Digite S caso queira sair\n" + "Digite quantos Ninjas quer cadastrar:");
                     String input = scan.nextLine();
+
+
                     if (input.equalsIgnoreCase("S")) {
                         break;
                     }//Retorna para o Menu Principal
@@ -38,6 +40,7 @@ public class Main {
 
                     Actions.RegisterNinja(input, scan);
 
+
                     try {
                         System.out.println("retornando ao Menu inicial...");
                         Thread.sleep(1000);
@@ -47,16 +50,13 @@ public class Main {
 
                     break;
 
-
-                case 2: //Mostra ao usuário os Ninjas já Cadastrados
-
-
-                        if (ninjasData.isEmpty() || ninjasData.getFirst()==null) {
-                            System.out.println("Não há ninjas cadastrados");
-                        } else
-                            make.ShowRegistered();
-
-
+                //Mostra ao usuário os Ninjas já Cadastrados
+                case 2:
+                    if (ninjasData.isEmpty() || ninjasData.getFirst()==null) {
+                        System.out.println("Não há ninjas cadastrados");
+                    } else{
+                            Actions.ShowRegistered();
+                    }
 
                     try {
                         System.out.println("retornando ao Menu inicial...");
@@ -66,8 +66,8 @@ public class Main {
                     }
                     break;
 
-
-                case 3: //Remove Ninjas cadastrados
+                //Remove Ninjas cadastrados
+                case 3:
                     try {
                         if (ninjasData.isEmpty() || ninjasData.getFirst()==null) {
                             System.out.println("Não há ninjas cadastrados");
@@ -80,28 +80,25 @@ public class Main {
                                 System.out.println("erro");
                             }
                         } else {
-                            make.ShowRegistered();
+                            Actions.ShowRegistered();
                         }
                     } catch (NullPointerException e) {
                         System.out.println("Não há ninjas cadastrados");
                     }
 
 
-
-
                 System.out.println("Qual Ninja deseja retirar?:");
-                for (int i = 0; i < ninjasData.size(); i++) {
-                    System.out.println(i + 1 + "- " + ninjasData.get(i).name);
-                }
+                    int remove = scan.nextInt();
 
-                int remove = scan.nextInt();
 
                 while (remove > ninjasData.size()) {
                     System.out.println("Tente Novamente");
                     remove = scan.nextInt();//posição do array que será removida +1
                 }
 
+
                     ninjasData.remove(remove - 1);
+
 
                 try {
                     System.out.println("retornando ao Menu inicial...");
@@ -112,6 +109,30 @@ public class Main {
                 }
                 break;
 
+
+                case 4:
+                    try {
+                        if (ninjasData.isEmpty() || ninjasData.getFirst()==null) {
+                            System.out.println("Não há ninjas cadastrados");
+                            try {
+                                System.out.println("retornando ao Menu inicial...");
+                                Thread.sleep(1000);
+                                break;
+
+                            } catch (InterruptedException e) {
+                                System.out.println("erro");
+                            }
+                        }
+                    } catch (NullPointerException e) {
+                        System.out.println("Não há ninjas cadastrados");
+                    }
+
+                    System.out.println("Escolha o Ninja para lutar");
+                    Actions.ShowRegistered();
+                    int ninjaEscolhido = scan.nextInt();
+                    scan.nextLine();
+                    Battle.StartBattle(ninjaEscolhido, scan);
+                    break;
 
                 case 0: //encerra a Aplicação
                     scan.close();
